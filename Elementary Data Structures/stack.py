@@ -8,7 +8,10 @@ Stack ADT Operations:
 
 """
 Time Complexity:
-
+- pop(): O(1)
+- push(item): O(1)
+- top(): 0(1)
+- is_empty(): 0(1)
 """
 
 class Stack:
