@@ -1,3 +1,4 @@
 __pycache__/
 .DS_Store
 Elementary\ Data\ Structures/test_stack.py
+Elementary\ Data\ Structures/test_queue.py

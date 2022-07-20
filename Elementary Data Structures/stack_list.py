@@ -34,7 +34,7 @@ class Stack:
         @return: The element popped from the stack.
         """
         if self.is_empty():
-            raise Exception("Error: Cannot pop an empty stack.")
+            raise Exception("Error: Cannot pop from an empty stack.")
         else:
             return self.stack.pop()
 
@@ -51,12 +51,13 @@ class Stack:
     def push(self, item):
         """
         Adds an item to the top of the stack.
-        @param: The item to end to the top of the stack.
+        @param: The item to add to the top of the stack.
         """
         self.stack.append(item)
 
 """
 Notes:
-- Uses LIFO (last-in, first-out) ordering.
-- Data can only be inserted, deleted, and accessed at the end of a stack.
+- Uses LIFO (last in, first out) ordering.
+- Simple arrays with the restrictions that data can only be inserted, deleted, 
+and accessed at the end of a stack.
 """
