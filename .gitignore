@@ -2,3 +2,5 @@ __pycache__/
 .DS_Store
 Elementary\ Data\ Structures/test_stack.py
 Elementary\ Data\ Structures/test_queue.py
+Hashing\ Data\ Structures/test_hash_table.py
+Hashing\ Data\ Structures/test_hash_table_separate_chaining.py
