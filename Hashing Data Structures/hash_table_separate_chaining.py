@@ -71,7 +71,6 @@ class HashTable():
         @param key: Key to search for within the hash table.
         @return: True if the key is in the hash table, false otherwise.
         """
-
         index = self.hash_function(key)
         for elm in self.hash_table[index]:
             if elm == key:
@@ -92,7 +91,6 @@ class HashTable():
         if len(self.hash_table[index]) == 0:
             self.buckets_filled -= 1
             
-        
     def hash_function(self, key):
         """
         Computes a hash value for a given give to use to map to a valid index.
@@ -121,7 +119,6 @@ class HashTable():
                     self.buckets_filled += 1
                 self.hash_table[index].append(key)
 
-    
     def load_factor_in_range(self):
         """
         Checks to see if the load factor is within range.
@@ -184,33 +181,3 @@ Separate Chaining Worst Case Time-Complexity:
 - If all the keys are mapped to the same index, we would need to probe over all
 n elements.
 """
-
-
-test_ht = HashTable()
-test_ht.insert(5)
-test_ht.insert(86)
-test_ht.remove(86)
-#hash_table.insert(1)
-"""
-hash_table.insert(22)
-hash_table.insert(33)
-hash_table.insert(44)
-
-hash_table.insert(2)
-hash_table.insert(3)
-hash_table.insert(4)
-hash_table.insert(5)
-hash_table.insert(6)
-hash_table.insert(7)
-hash_table.insert(8)
-hash_table.insert(9)
-
-#hash_table.remove(33)
-
-
-
-"""
-test_ht.print_hash_table()
-
-#print(hash_table.find(14))
-#print(hash_table.find(15))

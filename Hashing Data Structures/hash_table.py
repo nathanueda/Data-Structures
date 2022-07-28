@@ -68,7 +68,6 @@ class HashTable():
         index = self.hash_function(key)
         return self.hash_table[index] == key
 
-
     def remove(self, key):
         """
         Removes a key from the hash table.
