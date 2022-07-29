@@ -90,7 +90,7 @@ class HashMap():
     def remove(self, key, value):
         """
         Removes a key from the hash map.
-        @key: The key to remove.
+        @param key: The key to remove.
         @param value: value associated with the given key.
         """
         index = self.hash_function(key)

@@ -77,7 +77,7 @@ class HashTable():
     def remove(self, key):
         """
         Removes a key from the hash table.
-        @key: The key to remove.
+        @param key: The key to remove.
         """
         index = self.hash_function(key)
         
