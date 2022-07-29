@@ -4,3 +4,5 @@ Elementary\ Data\ Structures/test_stack.py
 Elementary\ Data\ Structures/test_queue.py
 Hashing\ Data\ Structures/test_hash_table.py
 Hashing\ Data\ Structures/test_hash_table_separate_chaining.py
+Hashing\ Data\ Structures/test_hash_map.py
+Hashing\ Data\ Structures/test_hash_map_separate_chaining.py
