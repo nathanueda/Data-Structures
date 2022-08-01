@@ -1,6 +1,6 @@
 """
 A hash table is an implementation of the Set ADT.
-Set: unordered collection of elements that doens't allow duplicates.
+Set: unordered collection of elements that doesn't allow duplicates.
     - i.e.: {2, 4, 6, 8} = {2, 6, 4, 8}
 
 Set ADT Operations:
