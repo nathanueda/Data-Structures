@@ -1,5 +1,5 @@
 """
-An implementation of the List ADT using a Singly Linked List.
+An implementation of the List ADT using a Doubly Linked List.
 List: ordered collection of elements that allows duplicates.
     - i.e.: (2, 4, 6, 8) != (2, 6, 4, 8)
 
@@ -22,17 +22,19 @@ Space Complexity: O(N)
 class Node:
     """Implementation of a class to create nodes."""
 
-    def __init__(self, data=None, next=None):
+    def __init__(self, data=None, prev=None, next=None):
         """Create a node."""
         self.data = data
+        self.prev = prev
         self.next = next
-    
-class SinglyLinkedList:
-    """Implementation of a singly linked list."""
+
+class DoublyLinkedList:
+    """Implementation of a doubly linked list."""
 
     def __init__(self):
         """Create an empty singly linked list."""
         self.head = None
+        self.tail = None
         self.num_nodes = 0
 
     def search(self, query):
@@ -47,7 +49,7 @@ class SinglyLinkedList:
                 return True
             curr = curr.next
         return False
-    
+
     def insert(self, query, index):
         """
         Add a new node with the query as the data to the index within the list.
@@ -55,42 +57,59 @@ class SinglyLinkedList:
         @param index: The index to insert the newly created node.
         """
         new_node = Node(query)
-        # Add to front.
-        if (index == 0 or self.num_nodes == 0):
-            new_node.next = self.head
+        # List is empty.
+        if (self.num_nodes == 0):
             self.head = new_node
-        # Add to end.
-        elif (index >= self.num_nodes):
-            curr = self.head
-            while (curr.next != None):
-                curr = curr.next
-            curr.next = new_node
-        # Add to somewhere in the middle.
+            self.tail = new_node
+            self.head.prev = None
+            self.tail.next = None
         else:
-            curr = self.head
-            curr_index = 0
+            # Add to front.
+            if (index == 0):
+                new_node.next = self.head
+                new_node.prev = None
+                self.head.prev = new_node
+                self.head = new_node
+            # Add to end.
+            elif (index >= self.num_nodes):
+                new_node.prev = self.tail
+                new_node.next = None
+                self.tail.next = new_node
+                self.tail = new_node
+            # Add to somewhere in the middle.
+            else:
+                curr = self.head
+                curr_index = 0
             # Break when we access the node before where the new node will go.
-            while (curr_index < (index - 1)):
-                curr = curr.next
-                curr_index += 1
-            new_node.next = curr.next
-            curr.next = new_node
+                while (curr_index < (index - 1)):
+                    curr = curr.next
+                    curr_index += 1
+                new_node.next = curr.next
+                new_node.prev = curr
+                curr.next = new_node
+                curr.next.next.prev = new_node
             
         self.num_nodes += 1
-    
+
     def remove(self, query):
         """
         Deletes a node with a value of the given query.
         @param query: Delete the node that contains the given quer as its data.
         """
-        curr = self.head
 
         # Removing the first node.
         if (self.head.data == query):
-            self.head = curr.next
+            self.head = self.head.next
+            self.head.prev = None
             self.num_nodes -= 1
-        # Removing any node after the first node.
+        # Removing the last node
+        elif (self.tail.data == query):
+            self.tail = self.tail.prev
+            self.tail.next = None
+            self.num_nodes -= 1
+        # Removing any node in between the first and last nodes.
         else:
+            curr = self.head
             while (curr.next != None):
                 # If node exists in the list, this statement will be executed.
                 if (curr.next.data == query): 
@@ -99,7 +118,7 @@ class SinglyLinkedList:
                     break
                 curr = curr.next
         return
-    
+
     def size(self):
         """Returns the number of nodes within the list."""
         return self.num_nodes
@@ -116,6 +135,18 @@ class SinglyLinkedList:
                 curr = curr.next
                 index += 1
 
+    def print_list_backwards(self):
+        """Print the linked list in reverse order."""
+        if (self.num_nodes == 0):
+            print("List is empty.")
+        else:
+            curr = self.tail
+            index = self.num_nodes - 1
+            while (curr != None):
+                print(f"{index}: Data: {curr.data}")
+                curr = curr.prev
+                index -= 1
+
 """
 Notes:
 
@@ -129,8 +160,8 @@ they are especially powerful when iterating through an entire list while making
 insertions/deletions along the way as we never have to worry about shifting 
 other data while executing these operations.
 
-Singly Linked List:
-- In a singly linked list, a node is a container that holds some data as well as
-information that connects a node to the next node in the list.
-- Constant time insertion/deletion at the beginning of a list.
+Doubly Linked List:
+- In a doubly linked list, a node is a container that holds some data as well as
+information that connects a node to the next node and previous node in the list.
+- Constant time insertion/deletion at the beginning and end of a list.
 """
