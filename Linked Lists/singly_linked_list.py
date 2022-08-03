@@ -4,7 +4,7 @@ List: ordered collection of elements that allows duplicates.
     - i.e.: (2, 4, 6, 8) != (2, 6, 4, 8)
 
 Some List ADT Operations:
-1. find(x): Return true if x exists in the set, false otherwise.
+1. search(x): Return true if x exists in the set, false otherwise.
 2. insert(x): Adds x to the set.
 3. remove(x): Removes x from the set.
 4. size(): Returns the size of the set.
@@ -12,7 +12,7 @@ Some List ADT Operations:
 
 """
 Time Complexity:
-1. find(x): O(N)
+1. search(x): O(N)
 2. insert(x): O(N)
 3. remove(x): O(N)
 

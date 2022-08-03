@@ -8,4 +8,5 @@ Hashing\ Data\ Structures/test_hash_map.py
 Hashing\ Data\ Structures/test_hash_map_separate_chaining.py
 Linked\ Lists/test_singly_linked_list.py
 Linked\ Lists/test_doubly_linked_list.py
+Trees/test_binary_search_tree.py
 
