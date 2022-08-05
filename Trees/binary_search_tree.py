@@ -2,7 +2,7 @@
 An implementation of the Tree ADT using a Binary Search Tree.
 
 Some Tree ADT Operations:
-1. search(x): Return true if x exists in the set, false otherwise.
+1. search(x): Return the node containing x is found, None otherwise.
 2. insert(x): Adds x to the set.
 3. remove(x): Removes x from the set.
 4. size(): Returns the size of the set.
@@ -32,8 +32,6 @@ class Node:
         self.left = left
         self.right = right
     
-    def get_data(self):
-        return self.data
     
 class BinarySearchTree:
     """Implementation of a binary search tree."""
@@ -47,7 +45,7 @@ class BinarySearchTree:
         """
         Search for a node with query as the data it holds.
         @param query: The value to search for.
-        @return: The node if found, None otherwise True if found, False otherwise.
+        @return: The node if found, None otherwise.
         """
 
         if self.size() == 0:
@@ -95,7 +93,7 @@ class BinarySearchTree:
     def remove(self, query):
         """
         Deletes a node with a value of the given query.
-        @param query: Delete the node that contains the given quer as its data.
+        @param query: Delete the node that contains the given query as its data.
         """
         curr = self.root
         while query != curr.data:
