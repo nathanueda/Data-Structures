@@ -137,7 +137,6 @@ class Trie:
         # Printing all the words that start with prefix.
         self.preorder_traversal(end_of_prefix, prefix)
 
-
     def size(self):
         """
         Returns the number of words within the trie.
