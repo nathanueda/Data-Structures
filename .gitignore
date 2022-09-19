@@ -10,4 +10,5 @@ Linked\ Lists/test_singly_linked_list.py
 Linked\ Lists/test_doubly_linked_list.py
 Trees/test_binary_search_tree.py
 Trees/test_trie.py
+Trees/test_binary_min_heap.py
 

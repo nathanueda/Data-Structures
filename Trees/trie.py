@@ -16,11 +16,6 @@ Time Complexity (Worst/Average/Best):
 2. insert(x): O(k)
 3. remove(x): O(k)
 
-Average Time Complexity:
-1. search(x): O(logN)
-2. insert(x): O(logN)
-3. remove(x): O(logN)
-
 Space Complexity: O(|Σ|^(k+1))
 - If each word was length k, the 1st level of the trie would have 1 node, the
 2nd level would have |Σ| nodes, the third would have |Σ|^2 and so on. Therefore,

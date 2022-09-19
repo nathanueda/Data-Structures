@@ -9,7 +9,7 @@ Some Tree ADT Operations:
 """
 
 """
-Time Complexity:
+Worst Case Time Complexity:
 1. search(x): O(N)
 2. insert(x): O(N)
 3. remove(x): O(N)
